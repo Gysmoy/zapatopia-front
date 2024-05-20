@@ -55,3 +55,42 @@ button {
   border-radius: 0 5px 5px 0;
   outline: none;
 }
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.login-form label,
+.login-form input,
+.login-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-form input,
+.login-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
