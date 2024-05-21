@@ -444,7 +444,23 @@
 
                 <!-- Start Content-->
                 <div class="container-fluid">
-
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row justify-content-between">
+                                        <div class="col-md-4">
+                                            <div class="mt-3 mt-md-0">
+                                                <button type="button" class="btn btn-success waves-effect waves-light"
+                                                    data-bs-toggle="modal" data-bs-target="#custom-modal"><i
+                                                        class="mdi mdi-plus-circle me-1"></i> Nueva venta</button>
+                                            </div>
+                                        </div><!-- end col-->
+                                    </div> <!-- end row -->
+                                </div>
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -565,7 +581,52 @@
 
     </div>
     <!-- END wrapper -->
-
+    <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Venta</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Cliente</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingresa cliente">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingrese número">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Medio de contacto</label>
+                            <div class="me-sm-2">
+                                <select class="form-select my-1 my-md-0" id="status-select">
+                                    <option selected="">Elija un medio</option>
+                                    <option value="1">Presencial</option>
+                                    <option value="2">Virtual</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Estado de la Venta</label>
+                            <div class="me-sm-2">
+                                <select class="form-select my-1 my-md-0" id="status-select">
+                                    <option selected="">Elija un estado</option>
+                                    <option value="1">PENDIENTE</option>
+                                    <option value="2">PAGADO</option>
+                                    <option value="3">RECHAZADO</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-light waves-effect waves-light">Guardar</button>
+                        <button type="button" class="btn btn-danger waves-effect waves-light"
+                            data-bs-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- Right Sidebar -->
     <div class="right-bar">
 
