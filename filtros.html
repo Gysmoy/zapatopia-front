@@ -143,10 +143,33 @@
         document.addEventListener('DOMContentLoaded', function() {
             const addToCartButtons = document.querySelectorAll('.add-to-cart');
             const cartContainer = document.getElementById('cart-container');
+            const cartItemsContainer = document.querySelector('.minicart-inner');
+            const cartTotal = document.querySelector('.m-total span');
+            const cartAmount = document.querySelector('.js-amount-produc');
+            let total = 0;
+            let amount = 0;
 
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Aquí puedes agregar la lógica para agregar productos al carrito
+                    const name = button.dataset.name;
+                    const price = parseFloat(button.dataset.price);
+
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('minicart-item');
+                    cartItem.innerHTML = `
+                        <span>${name}</span>
+                        <span>S/ ${price.toFixed(2)}</span>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+
+                    total += price;
+                    cartTotal.textContent = total.toFixed(2);
+
+                    amount++;
+                    cartAmount.textContent = amount;
+
+                    // Mostrar el carrito después de agregar un producto
+                    cartContainer.style.display = 'block';
                 });
             });
 
