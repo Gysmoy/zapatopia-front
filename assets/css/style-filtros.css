@@ -14,11 +14,6 @@ header {
     align-items: center;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
 .logo {
     height: 50px;
 }
@@ -42,7 +37,6 @@ main {
 }
 
 .filter-container {
-    flex: 1;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
@@ -120,4 +114,39 @@ main {
     .products-container {
         grid-template-columns: 1fr;
     }
+}
+
+.description {
+    font-size: 12px;
+    text-align: start;
+}
+
+.marca {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo-container {
+    justify-content: left;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.car {
+    width: 40px;
+    height: 40px;
+}
+
+.carshop {
+    display: flex;
+    justify-content: right;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
