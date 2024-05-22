@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapotopia</title>
+    <link rel="stylesheet" href="assets/css/style-recibo.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Zapotopia</h1>
+            <button class="btn">Seguir comprando</button>
+        </div>
+    </header>
+    
+    <main>
+        <div class="main-container">
+            <section class="cart">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Camiseta Balsamiq</td>
+                            <td>S/ 19.99</td>
+                            <td>1</td>
+                            <td>S/ 19.99</td>
+                            <td><a href="#">Eliminar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Taza Balsamiq</td>
+                            <td>S/ 12.99</td>
+                            <td>2</td>
+                            <td>S/ 25.98</td>
+                            <td><a href="#">Eliminar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lápiz Balsamiq</td>
+                            <td>S/ 5.99</td>
+                            <td>3</td>
+                            <td>S/ 17.97</td>
+                            <td><a href="#">Eliminar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cuaderno Balsamiq</td>
+                            <td>S/ 9.99</td>
+                            <td>1</td>
+                            <td>S/ 9.99</td>
+                            <td><a href="#">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <aside>
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p>Op. Exoneradas <span>S/ 256.90</span></p>
+                    <p>Total <span>S/ 256.90</span></p>
+                </div>
+                <div class="contact-info">
+                    <h2>Datos de contacto</h2>
+                    <form>
+                        <label for="tipo-documento">Tipo documento</label>
+                        <select id="tipo-documento" name="tipo-documento">
+                            <option value="dni">DNI</option>
+                            <option value="ce">CE</option>
+                        </select>
+                        <input type="text" id="num-documento" name="num-documento" placeholder="Número documento">
+                        
+                        <input type="text" id="nombres" name="nombres" placeholder="Nombres">
+                        
+                        <input type="text" id="apellido-paterno" name="apellido-paterno" placeholder="Apellido paterno">
+                        
+                        <input type="text" id="apellido-materno" name="apellido-materno" placeholder="Apellido materno">
+                        
+                        <input type="text" id="direccion" name="direccion" placeholder="Dirección">
+                        
+                        <p>¿Cómo deseas que te contactemos?</p>
+                        <label><input type="radio" name="contacto" value="whatsapp"> Por WhatsApp</label>
+                        <label><input type="radio" name="contacto" value="llamada"> Por llamada</label>
+                        
+                        <button type="submit" class="btn">Solicitar compra</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
