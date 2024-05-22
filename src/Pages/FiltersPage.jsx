@@ -14,42 +14,52 @@ const FiltersPage = () => {
       </header>
       <main id='filters-page'>
         <aside className="filter-container">
-          <h2>¿Qué talla estás buscando?</h2>
+          <h2>¿Qué estás buscando?</h2>
           <form>
+
+          <label for="talla">Talla</label>
+                    <select id="talla" name="talla">
+                        <option value="">--Seleccionar--</option>
+                        <option value="38"> 38 </option>
+                        <option value="39"> 39 </option>
+                        <option value="40"> 40 </option>
+                        <option value="41"> 41 </option>
+                        <option value="42"> 42 </option>
+                    </select>
+
             <label for="marca">Marca</label>
-            <select id="marca" name="marca">
-              <option value="">--Seleccionar--</option>
-            </select>
+                    <select id="marca" name="marca">
+                        <option value="">--Seleccionar--</option>
+                        <option value="Nike"> Nike </option>
+                        <option value="Adidas"> Adidas </option>
+                        <option value="Puma"> Puma </option>
+                        <option value="Converse"> Converse </option>
+                        <option value="Vans"> Vans </option>
+                    </select>
 
             <label for="categoria">Categoría</label>
-            <select id="categoria" name="categoria">
-              <option value="">--Seleccionar--</option>
-            </select>
+                    <select id="categoria" name="categoria">
+                        <option value="">--Seleccionar--</option>
+                        <option value="">--Seleccionar--</option>
+                        <option value="">--Seleccionar--</option>
+                        <option value="">--Seleccionar--</option>
+                        <option value="">--Seleccionar--</option>
+                    </select>
 
-            <label for="color">Color</label>
-            <input type="text" id="color" name="color" />
+           <label for="genero">Género</label>
+                    <select id="genero" name="genero">
+                        <option value="">--Seleccionar--</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                    </select>
 
-            <label for="genero">Género</label>
-            <select id="genero" name="genero">
-              <option value="unisex">Unisex</option>
-            </select>
-
-            <label for="precio">Precio</label>
-            <div className="price-range">
-              <input type="range" id="precio" name="precio" min="0" max="1000" step="10" />
-              <div className="price-values">
-                <span>0</span>
-                <span>300</span>
-                <span>1000</span>
-              </div>
-            </div>
           </form>
         </aside>
         <section className="products-container">
           <div className="product-card">
-            <img src="product1.jpg" alt="Producto 1" />
-            <p>Marca1</p>
-            <p>Descripción modelo 1</p>
+            <img src="https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Sites-catalog-equinox/default/dwa0bb0c83/images/hi-res/194499062790_1_20240126120000-mrtPeru.jpg?sw=800&sh=800" alt="Producto 1" />
+            <p className="marca">Nike</p>
+            <p className="description">El fulgor vive en Nike Air Force 1 ’07, el ícono del básquetbol que le da un toque fresco a las características más recordadas: colores audaces y la cantidad perfecta de destellos para que brilles.</p>
             <p>S/ 450.00</p>
           </div>
           <div className="product-card">
