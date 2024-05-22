@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-container h1 {
+  margin: 0;
+}
+
+.btn {
+  padding: 0.5em 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.main-container {
+  display: flex;
+  padding: 2em;
+}
+
+.cart {
+  flex: 2;
+  margin-right: 2em;
+}
+
+.cart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart table, .cart th, .cart td {
+  border: 1px solid #ccc;
+}
+
+.cart th, .cart td {
+  padding: 1em;
+  text-align: left;
+}
+
+.cart th {
+  background-color: #f4f4f4;
+}
+
+.cart a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.cart a:hover {
+  text-decoration: underline;
+}
+
+aside {
+  flex: 1;
+}
+
+.summary, .contact-info {
+  margin-bottom: 2em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.summary h2, .contact-info h2 {
+  margin-top: 0;
+}
+
+.summary p, .contact-info label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info input, .contact-info select {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+}
+
+.contact-info input[type="radio"] {
+  margin-right: 0.5em;
+}
+
+.contact-info button {
+  align-self: flex-start;
+  padding: 0.5em 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-info button:hover {
+  background-color: #0056b3;
+}
