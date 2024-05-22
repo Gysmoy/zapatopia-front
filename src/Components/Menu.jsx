@@ -65,7 +65,7 @@ const Menu = () => {
             <MenuItem href='/admin/ventas' icon='mdi mdi-sale'>Ventas</MenuItem>
 
             <li className="menu-title">Configuración</li>
-            <MenuItem href='/admin/productos' icon='mdi mdi-store' >Productos</MenuItem>
+            <MenuItem href='/admin/products' icon='mdi mdi-store' >Productos</MenuItem>
             <MenuItem href='/admin/brands' icon='mdi mdi-storefront'>Marcas</MenuItem>
             <MenuItem href='/admin/categories' icon='mdi mdi-format-list-bulleted-type'>Categorías</MenuItem>
 
