@@ -23,13 +23,12 @@ const LoginPage = () => {
       body: JSON.stringify(request)
     })
 
-    // if (!status) Swal.fire({
-    //   icon: 'error',
-    //   title: 'Credenciales incorrectas',
-    //   text: result?.message ?? 'Error inesperado al iniciar sesión.'
-    // })
-    // else
-   window.location.href = '/admin/'
+    if (!status) Swal.fire({
+      icon: 'error',
+      title: 'Credenciales incorrectas',
+      text: result?.message ?? 'Error inesperado al iniciar sesión.'
+    })
+    else window.location.href = '/admin/'
   }
 
   return (
