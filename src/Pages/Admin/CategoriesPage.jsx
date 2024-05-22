@@ -31,7 +31,7 @@ const CategoriesPage = () => {
   }
 
   const resetForm = () => {
-    resetForm()
+    modalRef.current.reset()
   }
 
   const onModalSubmit = (e) => {
