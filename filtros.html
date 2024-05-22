@@ -106,42 +106,52 @@
         <!-- Botón del carrito -->
         <button id="cart-toggle">Carrito</button>
         <!-- Contenedor del carrito (inicialmente oculto) -->
-        <div class="cart-container" id="cart-container" style="display: none;">
-            <h2>Carrito de compras</h2>
-            <div class="cart-items"></div>
-            <div class="cart-total">Total: S/ <span id="cart-total">0.00</span></div>
+        <div id="cart-container">
+            <div id="cart-close">&times;</div>
+            <div class="minicart-cnt gh-close-modal downMenu">
+                <div class="minicart-vacio">
+                    <span class="icons-cart"></span>
+                    <p>
+                        Tu carrito de compras <br/>está vacío
+                    </p>
+                </div>
+                <div class="minicart-header">
+                    <p>Carrito de compras</p>
+                    <p>
+                        Tienes <span class="js-amount-produc">0</span>
+                    </p>
+                </div>
+                <div class="minicart-inner gh-scroll"></div>
+                <div class="minicart-resumen">
+                    <div class="m-total">
+                        <p>Subtotal productos</p>
+                        <span class="price"></span>
+                    </div>
+                    <div class="m-promo">
+                        <p>
+                            Subtotal con Tarjeta<span class="icons-toh-r"></span>
+                        </p>
+                        <span class="price"></span>
+                    </div>
+                    <a rel="nofollow" class="gh-btn v2" href="/checkout/#/cart">Ir a mi carrito</a>
+                </div>
+            </div>
         </div>
     </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            const cartItemsContainer = document.querySelector('.cart-items');
-            const cartTotal = document.getElementById('cart-total');
-            let total = 0;
+            const cartContainer = document.getElementById('cart-container');
 
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const name = button.dataset.name;
-                    const price = parseFloat(button.dataset.price);
-
-                    const cartItem = document.createElement('div');
-                    cartItem.classList.add('cart-item');
-                    cartItem.innerHTML = `
-                        <img src="product-placeholder.jpg" alt="${name}">
-                        <span>${name}</span>
-                        <span>S/ ${price.toFixed(2)}</span>
-                    `;
-                    cartItemsContainer.appendChild(cartItem);
-
-                    total += price;
-                    cartTotal.textContent = total.toFixed(2);
+                    // Aquí puedes agregar la lógica para agregar productos al carrito
                 });
             });
 
             // Toggle para mostrar/ocultar el carrito
             const cartToggle = document.getElementById('cart-toggle');
-            const cartContainer = document.getElementById('cart-container');
 
             cartToggle.addEventListener('click', () => {
                 if (cartContainer.style.display === 'none') {
@@ -149,6 +159,13 @@
                 } else {
                     cartContainer.style.display = 'none';
                 }
+            });
+
+            // Cerrar el carrito al hacer clic en el botón de cerrar
+            const cartClose = document.getElementById('cart-close');
+
+            cartClose.addEventListener('click', () => {
+                cartContainer.style.display = 'none';
             });
         });
     </script>
