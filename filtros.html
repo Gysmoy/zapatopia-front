@@ -103,7 +103,10 @@
                 <p>S/ 420.00</p>
             </div>
         </section>
-        <div class="cart-container">
+        <!-- Botón del carrito -->
+        <button id="cart-toggle">Carrito</button>
+        <!-- Contenedor del carrito (inicialmente oculto) -->
+        <div class="cart-container" id="cart-container" style="display: none;">
             <h2>Carrito de compras</h2>
             <div class="cart-items"></div>
             <div class="cart-total">Total: S/ <span id="cart-total">0.00</span></div>
@@ -134,6 +137,18 @@
                     total += price;
                     cartTotal.textContent = total.toFixed(2);
                 });
+            });
+
+            // Toggle para mostrar/ocultar el carrito
+            const cartToggle = document.getElementById('cart-toggle');
+            const cartContainer = document.getElementById('cart-container');
+
+            cartToggle.addEventListener('click', () => {
+                if (cartContainer.style.display === 'none') {
+                    cartContainer.style.display = 'block';
+                } else {
+                    cartContainer.style.display = 'none';
+                }
             });
         });
     </script>
