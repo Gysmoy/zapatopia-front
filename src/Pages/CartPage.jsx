@@ -7,6 +7,7 @@ const CartPage = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
+    document.title = 'Carrito de compras'
   }, [null])
 
   return (
@@ -41,34 +42,17 @@ const CartPage = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Camiseta Balsamiq</td>
-                        <td>S/ 19.99</td>
-                        <td>1</td>
-                        <td>S/ 19.99</td>
-                        <td><a href="#">Eliminar</a></td>
-                      </tr>
-                      <tr>
-                        <td>Taza Balsamiq</td>
-                        <td>S/ 12.99</td>
-                        <td>2</td>
-                        <td>S/ 25.98</td>
-                        <td><a href="#">Eliminar</a></td>
-                      </tr>
-                      <tr>
-                        <td>Lápiz Balsamiq</td>
-                        <td>S/ 5.99</td>
-                        <td>3</td>
-                        <td>S/ 17.97</td>
-                        <td><a href="#">Eliminar</a></td>
-                      </tr>
-                      <tr>
-                        <td>Cuaderno Balsamiq</td>
-                        <td>S/ 9.99</td>
-                        <td>1</td>
-                        <td>S/ 9.99</td>
-                        <td><a href="#">Eliminar</a></td>
-                      </tr>
+                      {cart.map(({ id, producto, cantidad, precioVenta }) => {
+                        return <tr>
+                          <td>{producto}</td>
+                          <td>S/ {precioVenta}</td>
+                          <td style={{ width: '0%' }}>
+                            <input type="number" className="form-control" defaultValue={cantidad} style={{ width: '100px' }} />
+                          </td>
+                          <td>S/ {precioVenta * cantidad}</td>
+                          <td><a href="#">Eliminar</a></td>
+                        </tr>
+                      })}
                     </tbody>
                   </table>
                 </div>
