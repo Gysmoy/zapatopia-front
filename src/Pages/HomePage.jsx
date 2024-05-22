@@ -12,10 +12,9 @@ const HomePage = () => {
         <div className="logo-container">
           <img src={zapatopia} alt="Zapatopia Logo" className="logo" />
         </div>
-        <h2>Las mejores zapatilla a solo un clic de distancia</h2>
+        <h2>Las mejores zapatillas a solo un clic de distancia</h2>
         <div className="search-container">
-          <input type="text" id="search" name="search" placeholder="Que talla estas buscando?" />
-          <Link to="/filters" type="button">Buscar</Link>
+          <a href="/FiltersPage.jsx"><button type="button">Empezar</button></a>
         </div>
       </main>
     </>
