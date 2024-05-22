@@ -70,11 +70,11 @@ const Menu = () => {
             <MenuItem href='/admin/categories' icon='mdi mdi-format-list-bulleted-type'>Categorías</MenuItem>
 
             <MenuItemContainer title='Inventario' icon='mdi mdi-layers'>
-              <MenuItem href='/admin/warehouse' icon='mdi mdi-warehouse'>Almacen</MenuItem>
+              <MenuItem href='/admin/warehouse' icon='mdi mdi-warehouse'>Almacenes</MenuItem>
             </MenuItemContainer>
 
             <MenuItem href='/admin/concepts' icon='mdi mdi-page-next'>Conceptos</MenuItem>
-            <MenuItem href='/admin/usersyrols' icon='mdi mdi-contacts'>Usuarios y Roles</MenuItem>
+            <MenuItem href='/admin/users' icon='mdi mdi-contacts'>Usuarios y Roles</MenuItem>
           </ul>
         </div>
         <div className="clearfix"></div>
