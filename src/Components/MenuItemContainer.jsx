@@ -3,12 +3,12 @@ const MenuItemContainer = ({ title, icon, children }) => {
   return (
     <li>
       <a href={`#${id}`} data-bs-toggle="collapse">
-        <i class={icon}></i>
+        <i className={icon}></i>
         <span> {title} </span>
-        <span class="menu-arrow"></span>
+        <span className="menu-arrow"></span>
       </a>
-      <div class="collapse" id={id}>
-        <ul class="nav-second-level">
+      <div className="collapse" id={id}>
+        <ul className="nav-second-level">
           {children}
         </ul>
       </div>

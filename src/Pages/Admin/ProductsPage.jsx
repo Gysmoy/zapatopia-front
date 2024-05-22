@@ -4,12 +4,16 @@ import ProductsRest from "../../Rest/ProductsRest"
 import Modal from "../../Components/Modal"
 import Swal from "sweetalert2"
 import moment from 'moment-timezone'
+import BrandsRest from "../../Rest/BrandsRest"
+import CategoriesRest from "../../Rest/CategoriesRest"
 
 moment.tz.setDefault("America/Lima")
 moment.locale("es")
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([])
+  const [brands, setBrands] = useState([])
+  const [categories, setCategories] = useState([])
   const [modalTittle, setModalTittle] = useState('Agregar producto')
   const [id, setId] = useState(null)
 
@@ -28,11 +32,25 @@ const ProductsPage = () => {
   useEffect(() => {
     document.title = "Productos"
     loadProducts()
+    loadBrands()
+    loadCategories()
   }, [null])
 
   const loadProducts = () => {
     ProductsRest.all().then((data) => {
       setProducts(data)
+    })
+  }
+
+  const loadBrands = () => {
+    BrandsRest.all().then((data) => {
+      setBrands(data)
+    })
+  }
+
+  const loadCategories = () => {
+    CategoriesRest.all().then((data) => {
+      setCategories(data)
     })
   }
 
