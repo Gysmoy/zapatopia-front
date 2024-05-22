@@ -12,15 +12,18 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="lte/assets/images/favicon.ico">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- App css -->
     <link href="lte/assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css"
         id="bs-default-stylesheet" />
-    <link href="lte/assets/css/config/default/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+    <link href="lte/assets/css/config/default/app.min.css" rel="stylesheet" type="text/css"
+        id="app-default-stylesheet" />
 
     <link href="lte/assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css"
         id="bs-dark-stylesheet" disabled="disabled" />
-    <link href="lte/assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet"
-        disabled="disabled" />
+    <link href="lte/assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css"
+        id="app-dark-stylesheet" disabled="disabled" />
 
     <!-- icons -->
     <link href="lte/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -82,8 +85,9 @@
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="d-flex align-items-start">
-                                            <img class="d-flex me-2 rounded-circle" src="lte/assets/images/users/user-2.jpg"
-                                                alt="Generic placeholder image" height="32">
+                                            <img class="d-flex me-2 rounded-circle"
+                                                src="lte/assets/images/users/user-2.jpg" alt="Generic placeholder image"
+                                                height="32">
                                             <div class="w-100">
                                                 <h5 class="m-0 font-14">Erwin E. Brown</h5>
                                                 <span class="font-12 mb-0">UI Designer</span>
@@ -94,8 +98,9 @@
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="d-flex align-items-start">
-                                            <img class="d-flex me-2 rounded-circle" src="lte/assets/images/users/user-5.jpg"
-                                                alt="Generic placeholder image" height="32">
+                                            <img class="d-flex me-2 rounded-circle"
+                                                src="lte/assets/images/users/user-5.jpg" alt="Generic placeholder image"
+                                                height="32">
                                             <div class="w-100">
                                                 <h5 class="m-0 font-14">Jacob Deo</h5>
                                                 <span class="font-12 mb-0">Developer</span>
@@ -146,7 +151,8 @@
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                 <div class="notify-icon">
-                                    <img src="lte/assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" />
+                                    <img src="lte/assets/images/users/user-1.jpg" class="img-fluid rounded-circle"
+                                        alt="" />
                                 </div>
                                 <p class="notify-details">Cristina Pride</p>
                                 <p class="text-muted mb-0 user-msg">
@@ -167,7 +173,8 @@
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon">
-                                    <img src="lte/assets/images/users/user-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                    <img src="lte/assets/images/users/user-4.jpg" class="img-fluid rounded-circle"
+                                        alt="" />
                                 </div>
                                 <p class="notify-details">Karen Robinson</p>
                                 <p class="text-muted mb-0 user-msg">
@@ -246,7 +253,7 @@
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->
-                        <a href="auth-logout.html" class="dropdown-item notify-item">
+                        <a href="lte/auth-login.html" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Cerrar Sesión</span>
                         </a>
@@ -454,6 +461,10 @@
                                                 <button type="button" class="btn btn-success waves-effect waves-light"
                                                     data-bs-toggle="modal" data-bs-target="#custom-modal"><i
                                                         class="mdi mdi-plus-circle me-1"></i> Agregar Usuario</button>
+
+                                                <button type="button" class="btn btn-success waves-effect waves-light"
+                                                    data-bs-toggle="modal" data-bs-target="#custom-modal-rol"><i
+                                                        class="mdi mdi-plus-circle me-1"></i> Nuevo Rol</button>
                                             </div>
                                         </div><!-- end col-->
                                     </div> <!-- end row -->
@@ -478,39 +489,7 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>jsmith</td>
-                                                    <td>Juan Smith</td>
-                                                    <td>Administrador</td>
-                                                    <td>2024-04-17</td>
-                                                    <td>Editar Eliminar</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>mgarcia</td>
-                                                    <td>Maria Garcia</td>
-                                                    <td>Vendedor</td>
-                                                    <td>2024-04-16</td>
-                                                    <td>Editar Eliminar</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>jlopez</td>
-                                                    <td>José López</td>
-                                                    <td>Vendedor</td>
-                                                    <td>2024-04-15</td>
-                                                    <td>Editar Eliminar</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>acarmona</td>
-                                                    <td>Ana Carmona</td>
-                                                    <td>Vendedor</td>
-                                                    <td>2024-04-14</td>
-                                                    <td>Editar Eliminar</td>
-                                                </tr>
+                                            <tbody id="table-body">
                                             </tbody>
                                         </table>
                                     </div> <!-- end .table-responsive-->
@@ -551,6 +530,7 @@
 
     </div>
     <!-- END wrapper -->
+    <!-- Modal para Agregar Usuario -->
     <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -559,33 +539,176 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="form-agregar-usuario">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nombre del Usuario</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingresa nombre de usuario">
+                            <label for="usuario" class="form-label">Nombre del Usuario</label>
+                            <input type="text" class="form-control" id="usuario-create"
+                                placeholder="Ingresa nombre de usuario">
                         </div>
                         <div class="mb-3">
-                            <label for="position" class="form-label">Contraseña del Usuario</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingresa contraseña">
+                            <label for="contrasena" class="form-label">Contraseña del Usuario</label>
+                            <input type="password" class="form-control" id="contrasena-create"
+                                placeholder="Ingresa contraseña">
                         </div>
                         <div class="mb-3">
-                            <label for="position" class="form-label">Persona</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingresa número">
+                            <label for="correo" class="form-label">Correo del Usuario</label>
+                            <input type="text" class="form-control" id="correo-create" placeholder="Ingresa el correo">
                         </div>
                         <div class="mb-3">
-                            <label for="position" class="form-label">Rol</label>
+                            <label for="persona" class="form-label">Persona</label>
                             <div class="me-sm-2">
-                                <select class="form-select my-1 my-md-0" id="status-select">
-                                    <option selected="">Elije un rol</option>
-                                    <option value="1">Vendedor</option>
-                                    <option value="2">Asesor</option>
-                                    <option value="3">Modelista</option>
-                                    <option value="3">Administreador</option>
+                                <select class="form-select my-1 my-md-0" id="status-select-persona">
+                                    <option selected="">Elije una persona</option>
                                 </select>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <label for="rol" class="form-label">Rol</label>
+                            <div class="me-sm-2">
+                                <select class="form-select my-1 my-md-0" id="status-select-rol">
+                                    <option selected="">Elije un rol</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-light waves-effect waves-light" id="create-usuario"
+                            onclick="guardarUsuario()">Guardar</button>
+                        <button type="button" class="btn btn-danger waves-effect waves-light"
+                            data-bs-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-                        <button type="submit" class="btn btn-light waves-effect waves-light">Guardar</button>
+
+    <div class="modal fade" id="custom-modal-editar-usuario" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Editar Usuario</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-editar-usuario">
+                        <!-- Input invisible para almacenar el idUsuario -->
+                        <input type="hidden" id="id-usuario-editar">
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Nombre del Usuario</label>
+                            <input type="text" class="form-control" id="usuario-editar"
+                                placeholder="Ingresa nombre de usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contrasena" class="form-label">Contraseña del Usuario</label>
+                            <input type="password" class="form-control" id="contrasena-editar"
+                                placeholder="Ingresa contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo del Usuario</label>
+                            <input type="text" class="form-control" id="correo-editar" placeholder="Ingresa el correo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="persona" class="form-label">Persona</label>
+                            <div class="me-sm-2">
+                                <select class="form-select my-1 my-md-0" id="status-select-persona-editar">
+                                    <option selected="">Elije una persona</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rol" class="form-label">Rol</label>
+                            <div class="me-sm-2">
+                                <select class="form-select my-1 my-md-0" id="status-select-rol-editar">
+                                    <option selected="">Elije un rol</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-light waves-effect waves-light" id="editar-usuario"
+                            onclick="actualizarUsuario()">Guardar</button>
+                        <button type="button" class="btn btn-danger waves-effect waves-light"
+                            data-bs-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="custom-modal-rol" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Nuevo Rol </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name1" class="form-label">Nombre de Rol</label>
+                                <input type="text" class="form-control" id="name-rol"
+                                    placeholder="Ingresa el nombre de rol">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="name2" class="form-label">Descripción de Rol</label>
+                                <input type="text" class="form-control" id="descripcion-rol"
+                                    placeholder="Ingresa la descripción de rol">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="position" class="form-label">Permisos</label>
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso1">
+                                    <label class="form-check-label" for="permiso1">
+                                        Inicio
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso2">
+                                    <label class="form-check-label" for="permiso2">
+                                        Trazabilidad
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso3">
+                                    <label class="form-check-label" for="permiso3">
+                                        Ventas
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso4">
+                                    <label class="form-check-label" for="permiso4">
+                                        Productos
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso5">
+                                    <label class="form-check-label" for="permiso5">
+                                        Marcas
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso6">
+                                    <label class="form-check-label" for="permiso6">
+                                        Categorias
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso7">
+                                    <label class="form-check-label" for="permiso7">
+                                        Conceptos
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permiso8">
+                                    <label class="form-check-label" for="permiso8">
+                                        Usuarios y Roles
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-light waves-effect waves-light" onclick="guardarNuevoRol()">Guardar</button>
                         <button type="button" class="btn btn-danger waves-effect waves-light"
                             data-bs-dismiss="modal">Cancelar</button>
                     </form>
@@ -749,6 +872,8 @@
 
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
+
+    <script src="assets/scripts/app-usersyrols.js"></script>
 
     <!-- Vendor js -->
     <script src="lte/assets/js/vendor.min.js"></script>
