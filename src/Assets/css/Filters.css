@@ -1,0 +1,116 @@
+#filters-page header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filters-page .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#filters-page .logo {
+  height: 50px;
+}
+
+#filters-page .cart-container button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#filters-page .cart-container button:hover {
+  background-color: #45a049;
+}
+
+#filters-page main {
+  display: flex;
+  padding: 20px;
+}
+
+#filters-page .filter-container {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+#filters-page .filter-container h2 {
+  margin-top: 0;
+}
+
+#filters-page .filter-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+#filters-page .filter-container label {
+  margin-top: 10px;
+}
+
+#filters-page .filter-container select,
+#filters-page .filter-container input[type="text"],
+#filters-page .filter-container input[type="range"] {
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#filters-page .price-range {
+  display: flex;
+  flex-direction: column;
+}
+
+#filters-page .price-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+#filters-page .products-container {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+#filters-page .product-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#filters-page .product-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#filters-page .product-card p {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  #filters-page main {
+    flex-direction: column;
+  }
+
+  #filters-page .filter-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  #filters-page .products-container {
+    grid-template-columns: 1fr;
+  }
+}
