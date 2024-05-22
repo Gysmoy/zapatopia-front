@@ -290,7 +290,7 @@
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Trazabilidad</h4>
+                    <h4 class="page-title-main">Ventas</h4>
                 </li>
 
             </ul>
@@ -444,95 +444,109 @@
 
                 <!-- Start Content-->
                 <div class="container-fluid">
-
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-body"> 
-
-                                    <table id="datatable"
-                                        class="table table-bordered dt-responsive table-responsive nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>Trace</th>
-                                                <th>Producto</th>
-                                                <th>Cantidad</th>
-                                                <th>Concepto</th>
-                                                <th>Fecha</th>
-                                            </tr>
-                                        </thead>
-
-
-                                        <tbody>
-                                            <tr>
-                                                <td>00000009</td>
-                                                <td>Zapatilla Adidas Ultraboost 23</td>
-                                                <td>12</td>
-                                                <td>Compra</td>
-                                                <td>2024-04-17 12:00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000008</td>
-                                                <td>Zapatilla Nike Air Zoom Pegasus 39</td>
-                                                <td>2</td>
-                                                <td>Venta interna</td>
-                                                <td>2024-04-17 11:54:20</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000007</td>
-                                                <td>Zapatilla Puma RS-X3 Marathon Running Shoes</td>
-                                                <td>8</td>
-                                                <td>Reposición de stock</td>
-                                                <td>2024-04-16 15:32:11</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000006</td>
-                                                <td>Zapatilla New Balance Fresh Foam 1080v12</td>
-                                                <td>4</td>
-                                                <td>Devolución</td>
-                                                <td>2024-04-15 11:08:43</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000005</td>
-                                                <td>Zapatilla Asics Gel-Kayano 29</td>
-                                                <td>1</td>
-                                                <td>Cambio de talla</td>
-                                                <td>2024-04-14 14:23:56</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000004</td>
-                                                <td>Zapatilla Brooks Ghost 14</td>
-                                                <td>3</td>
-                                                <td>Venta a mayorista</td>
-                                                <td>2024-04-13 10:59:28</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000003</td>
-                                                <td>Zapatilla Hoka One ONe Clifton 9</td>
-                                                <td>6</td>
-                                                <td>Compra online</td>
-                                                <td>2024-04-12 18:34:12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000002</td>
-                                                <td>Zapatilla Saucony Kinvana 13</td>
-                                                <td>2</td>
-                                                <td>Venta en tienda</td>
-                                                <td>2024-04-11 16:19:45</td>
-                                            </tr>
-                                            <tr>
-                                                <td>00000001</td>
-                                                <td>Zapatilla Veja Rio Branco</td>
-                                                <td>5</td>
-                                                <td>Pedido especial</td>
-                                                <td>2024-04-10 14:05:18</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="card-body">
+                                    <div class="row justify-content-between">
+                                        <div class="col-md-4">
+                                            <div class="mt-3 mt-md-0">
+                                                <button type="button" class="btn btn-success waves-effect waves-light"
+                                                    data-bs-toggle="modal" data-bs-target="#custom-modal"><i
+                                                        class="mdi mdi-plus-circle me-1"></i> Nueva venta</button>
+                                            </div>
+                                        </div><!-- end col-->
+                                    </div> <!-- end row -->
                                 </div>
-                            </div>
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-centered mb-0" id="btn-editable">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Cliente</th>
+                                                    <th>Monto</th>
+                                                    <th>Estado</th>
+                                                    <th>Fecha</th>
+                                                </tr>
+                                            </thead>
 
-                        </div>
+                                            <tbody>
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Diego Ortiz</td>
+                                                    <td>42.00</td>
+                                                    <td>PENDIENTE</td>
+                                                    <td>2024-04-01</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>Carlos Ramírez</td>
+                                                    <td>78.00</td>
+                                                    <td>PENDIENTE</td>
+                                                    <td>2024-04-09</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Pedro Sánchez</td>
+                                                    <td>56.00</td>
+                                                    <td>PENDIENTE</td>
+                                                    <td>2024-04-13</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>13</td>
+                                                    <td>Andrés Ruiz</td>
+                                                    <td>65.00</td>
+                                                    <td>PENDIENTE</td>
+                                                    <td>2024-04-05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>María Gómez</td>
+                                                    <td>180.00</td>
+                                                    <td>PAGADO</td>
+                                                    <td>2024-04-16</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>Alicia Jiménez</td>
+                                                    <td>345.00</td>
+                                                    <td>PAGADO</td>
+                                                    <td>2024-04-08</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>14</td>
+                                                    <td>Beatriz Navarro</td>
+                                                    <td>280.00</td>
+                                                    <td>PAGADO</td>
+                                                    <td>2024-04-04</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Isabel Martín</td>
+                                                    <td>480.00</td>
+                                                    <td>PAGADO</td>
+                                                    <td>2024-04-12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td>Sandra González</td>
+                                                    <td>112.00</td>
+                                                    <td>RECHAZADO</td>
+                                                    <td>2024-04-06</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end .table-responsive-->
+                                </div> <!-- end card-body -->
+                            </div> <!-- end card -->
+                        </div> <!-- end col -->
                     </div> <!-- end row -->
 
                 </div> <!-- container-fluid -->
@@ -567,7 +581,52 @@
 
     </div>
     <!-- END wrapper -->
-
+    <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Venta</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Cliente</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingresa cliente">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingrese número">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Medio de contacto</label>
+                            <div class="me-sm-2">
+                                <select class="form-select my-1 my-md-0" id="status-select">
+                                    <option selected="">Elija un medio</option>
+                                    <option value="1">Presencial</option>
+                                    <option value="2">Virtual</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Estado de la Venta</label>
+                            <div class="me-sm-2">
+                                <select class="form-select my-1 my-md-0" id="status-select">
+                                    <option selected="">Elija un estado</option>
+                                    <option value="1">PENDIENTE</option>
+                                    <option value="2">PAGADO</option>
+                                    <option value="3">RECHAZADO</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-light waves-effect waves-light">Guardar</button>
+                        <button type="button" class="btn btn-danger waves-effect waves-light"
+                            data-bs-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- Right Sidebar -->
     <div class="right-bar">
 
@@ -736,6 +795,12 @@
 
     <!-- Dashboar init js-->
     <script src="lte/assets/js/pages/dashboard.init.js"></script>
+
+    <!-- Table Editable plugin-->
+    <script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
+
+    <!-- Table editable init-->
+    <script src="assets/js/pages/tabledit.init.js"></script>
 
     <!-- App js-->
     <script src="lte/assets/js/app.min.js"></script>
