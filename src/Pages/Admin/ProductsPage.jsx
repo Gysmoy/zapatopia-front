@@ -6,6 +6,8 @@ import Swal from "sweetalert2"
 import moment from 'moment-timezone'
 import BrandsRest from "../../Rest/BrandsRest"
 import CategoriesRest from "../../Rest/CategoriesRest"
+import ReactSelect from "react-select"
+import WarehousesRest from "../../Rest/WarehousesRest"
 
 moment.tz.setDefault("America/Lima")
 moment.locale("es")
@@ -14,6 +16,7 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([])
   const [brands, setBrands] = useState([])
   const [categories, setCategories] = useState([])
+  const [warehouses, setWarehouses] = useState([])
   const [modalTittle, setModalTittle] = useState('Agregar producto')
   const [id, setId] = useState(null)
 
@@ -34,6 +37,7 @@ const ProductsPage = () => {
     loadProducts()
     loadBrands()
     loadCategories()
+    loadWarehouses()
   }, [null])
 
   const loadProducts = () => {
@@ -51,6 +55,12 @@ const ProductsPage = () => {
   const loadCategories = () => {
     CategoriesRest.all().then((data) => {
       setCategories(data)
+    })
+  }
+
+  const loadWarehouses = () => {
+    WarehousesRest.all().then((data) => {
+      setWarehouses(data)
     })
   }
 
@@ -182,18 +192,69 @@ const ProductsPage = () => {
           </div>
         </div>
       </div>
-      <Modal title={modalTittle} modalRef={modalRef} handleSubmit={onModalSubmit}>
-        <div className="form-group mb-2">
-          <label htmlFor="category">Categoria</label>
-          <input ref={categoryRef} name="category" type="text" className="form-control" required />
-        </div>
-        <div className="form-group mb-2">
-          <label htmlFor="category">Categoria</label>
-          <input ref={categoryRef} name="category" type="text" className="form-control" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="description">Descripción</label>
-          
+      <Modal title={modalTittle} modalRef={modalRef} handleSubmit={onModalSubmit} size="md">
+        <div className="row">
+          <div className="form-group col-12 mb-2">
+            <label htmlFor="description">Nombre</label>
+            <input type="text" className="form-control" />
+          </div>
+          <div className="form-group col-md-4 mb-2">
+            <label htmlFor="category">Categoria</label>
+            <ReactSelect ref={categoryRef} options={categories.map(({ id, categoria }) => ({ value: id, label: categoria }))} />
+          </div>
+          <div className="form-group col-md-4 mb-2">
+            <label htmlFor="category">Categoria</label>
+            <ReactSelect ref={brandref} options={brands.map(({ id, marca }) => ({ value: id, label: marca }))} />
+          </div>
+          <div className="form-group col-md-4 mb-2">
+            <label htmlFor="">Color</label>
+            <input type="color" name="" id="" className="form-control" />
+          </div>
+          <div className="form-group col-md-4 mb-2">
+            <label htmlFor="">Precio compra</label>
+            <input type="number" name="" id="" className="form-control" />
+          </div>
+          <div className="form-group col-md-4 mb-2">
+            <label htmlFor="">Talla</label>
+            <input type="number" name="" id="" className="form-control" />
+          </div>
+          <div className="form-group col-md-4 mb-2">
+            <label htmlFor="">Genero</label>
+            <select name="" id="" className="form-control">
+              <option value="X">Unisex</option>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </div>
+          <div className="col-12">
+            <hr className="mt-1 mb-2" />
+          </div>
+          <div className="form-group col-12">
+            <b htmlFor="">Stock y precio x almacen</b>
+            <table className="table table-sm table-bordered mb-0">
+              <thead>
+                <tr>
+                  <th>Almacen</th>
+                  <th>Stock</th>
+                  <th>P. venta</th>
+                </tr>
+              </thead>
+              <tbody>
+                {warehouses.map(({ id, almacen }) => {
+                  return <tr>
+                    <td>{almacen}</td>
+                    <td className="p-0" style={{ width: '0%' }}>
+                      <input type="number" className="form-control" style={{ width: '75px' }} />
+                    </td>
+                    <td className="p-0" style={{ width: '0%' }}>
+                      <input type="number" className="form-control" style={{ width: '75px' }} />
+                    </td>
+                  </tr>
+                })}
+              </tbody>
+            </table>
+          </div>
+
         </div>
       </Modal>
     </BaseTemplate>
