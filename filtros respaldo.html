@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zapatopia</title>
     <link rel="stylesheet" href="assets/css/style-filtros.css">
-    <link rel="stylesheet" href="assets/css/style-carrito-vistarapida.css"> <!-- Enlace al archivo CSS del carrito -->
 </head>
 <body>
     <header>
@@ -13,6 +12,7 @@
             <div class="logo-container">
                 <img src="assets/img/zapatopia.svg" alt="Zapatopia Logo" class="logo">
             </div>
+            
         </nav>
     </header>
     <main>
@@ -103,40 +103,6 @@
                 <p>S/ 420.00</p>
             </div>
         </section>
-        <div class="cart-container">
-            <h2>Carrito de compras</h2>
-            <div class="cart-items"></div>
-            <div class="cart-total">Total: S/ <span id="cart-total">0.00</span></div>
-        </div>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            const cartItemsContainer = document.querySelector('.cart-items');
-            const cartTotal = document.getElementById('cart-total');
-            let total = 0;
-
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const name = button.dataset.name;
-                    const price = parseFloat(button.dataset.price);
-
-                    const cartItem = document.createElement('div');
-                    cartItem.classList.add('cart-item');
-                    cartItem.innerHTML = `
-                        <img src="product-placeholder.jpg" alt="${name}">
-                        <span>${name}</span>
-                        <span>S/ ${price.toFixed(2)}</span>
-                    `;
-                    cartItemsContainer.appendChild(cartItem);
-
-                    total += price;
-                    cartTotal.textContent = total.toFixed(2);
-                });
-            });
-        });
-    </script>
     </main>
 </body>
 </html>
