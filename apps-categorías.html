@@ -444,7 +444,23 @@
 
                 <!-- Start Content-->
                 <div class="container-fluid">
-
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row justify-content-between">
+                                        <div class="col-md-4">
+                                            <div class="mt-3 mt-md-0">
+                                                <button type="button" class="btn btn-success waves-effect waves-light"
+                                                    data-bs-toggle="modal" data-bs-target="#custom-modal"><i
+                                                        class="mdi mdi-plus-circle me-1"></i> Agregar Categoría</button>
+                                            </div>
+                                        </div><!-- end col-->
+                                    </div> <!-- end row -->
+                                </div>
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -545,7 +561,32 @@
 
     </div>
     <!-- END wrapper -->
+    <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Agregar Categoría</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre de la Categoría</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingresa categoría">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Descripción de la Categoría</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingrese descripción">
+                        </div>
 
+                        <button type="submit" class="btn btn-light waves-effect waves-light">Guardar</button>
+                        <button type="button" class="btn btn-danger waves-effect waves-light"
+                            data-bs-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- Right Sidebar -->
     <div class="right-bar">
 
