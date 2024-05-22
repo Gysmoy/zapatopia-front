@@ -2,12 +2,21 @@ import { useEffect, useRef, useState } from "react"
 import BaseTemplate from "../../BaseTemplate"
 import Modal from "../../Components/Modal"
 import CategoriesRest from "../../Rest/CategoriesRest"
+import Swal from "sweetalert2"
+import moment from "moment-timezone"
+
+moment.tz.setDefault("America/Lima")
+moment.locale("es")
 
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([])
   const [modalTittle, setModalTittle] = useState('Agregar categoria')
+  const [id, setId] = useState(null)
 
   const modalRef = useRef()
+  const categoryRef = useRef()
+  const descriptionRef = useRef()
+
   const $ = window.$
 
   useEffect(() => {
@@ -21,16 +30,19 @@ const CategoriesPage = () => {
     })
   }
 
+  const resetForm = () => {
+    resetForm()
+  }
+
   const onModalSubmit = (e) => {
     e.preventDefault()
-    const formData = new FormData(modalRef.current)
     const request = {
-      id: formData.get('id') || undefined,
-      categoria: formData.get('brand'),
-      descripcion: formData.get('description')
+      id: id || undefined,
+      categoria: categoryRef.current.value,
+      descripcion: descriptionRef.current.value
     }
     CategoriesRest.save(request).then(() => {
-      modalRef.current.reset()
+      resetForm()
       $(modalRef.current).modal('hide')
       loadCategories()
     })
@@ -38,23 +50,36 @@ const CategoriesPage = () => {
 
   const onOpenModal = () => {
     setModalTittle('Agregar categoria')
-    modalRef.current.reset()
+    resetForm()
+    setId(null)
     $(modalRef.current).modal('show')
   }
 
-  const onEditClicked = (brand) => {
+  const onEditClicked = (category) => {
     setModalTittle('Editar categoria')
-    modalRef.current.reset()
-    modalRef.current.id.value = brand.id
-    modalRef.current.brand.value = brand.categoria
-    modalRef.current.description.value = brand.descripcion
+    resetForm()
+    setId(category.id)
+    categoryRef.current.value = category.categoria
+    descriptionRef.current.value = category.descripcion
     $(modalRef.current).modal('show')
   }
 
-  const onDeleteClicked = (id) => {
-    CategoriesRest.delete(id).then(() => {
-      loadCategories()
+  const onDeleteClicked = async (id) => {
+
+    const { isConfirmed } = await Swal.fire({
+      title: '¿Estás seguro de eliminar la categoria?',
+      text: "No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
     })
+
+    if (isConfirmed) {
+      CategoriesRest.delete(id).then(() => {
+        loadCategories()
+      })
+    }
   }
 
 
@@ -77,20 +102,22 @@ const CategoriesPage = () => {
                       <th>ID</th>
                       <th>Categoria</th>
                       <th>Descripción</th>
+                      <th>Fecha de actualización</th>
                       <th>Acción</th>
                     </tr>
                   </thead>
 
                   <tbody>
-                    {categories.map((brand) => {
-                      const { id, categoria, descripcion } = brand
-                      return <tr key={`brand-${id}`}>
+                    {categories.map((category) => {
+                      const { id, categoria, descripcion, fechaModificacion } = category
+                      return <tr key={`category-${id}`}>
                         <td>{id}</td>
                         <td>{categoria}</td>
                         <td>{descripcion}</td>
+                        <td>{moment(fechaModificacion).format('YYYY-MM-DD HH:mm:ss')}</td>
                         <td>
                           <div className="d-flex gap-1">
-                            <button className="btn btn-xs btn-info" onClick={() => onEditClicked(brand)}>Editar</button>
+                            <button className="btn btn-xs btn-info" onClick={() => onEditClicked(category)}>Editar</button>
                             <button className="btn btn-xs btn-danger" onClick={() => onDeleteClicked(id)}>Eliminar</button>
                           </div>
                         </td>
@@ -104,14 +131,13 @@ const CategoriesPage = () => {
         </div>
       </div>
       <Modal title={modalTittle} modalRef={modalRef} handleSubmit={onModalSubmit}>
-        <input type="hidden" name="id" />
         <div className="form-group mb-2">
-          <label htmlFor="brand">Categoria</label>
-          <input id="brand" name="brand" type="text" className="form-control" />
+          <label htmlFor="category">Categoria</label>
+          <input ref={categoryRef} name="category" type="text" className="form-control" required />
         </div>
         <div className="form-group">
           <label htmlFor="description">Descripción</label>
-          <textarea id="description" name="description" className="form-control" rows={3} />
+          <textarea ref={descriptionRef} name="description" className="form-control" rows={3} required />
         </div>
       </Modal>
     </BaseTemplate>

@@ -1,4 +1,5 @@
 import MenuItem from "./MenuItem"
+import MenuItemContainer from "./MenuItemContainer"
 
 const Menu = () => {
   return (
@@ -62,11 +63,16 @@ const Menu = () => {
             <MenuItem href='/admin/' icon='mdi mdi-view-dashboard'>Inicio</MenuItem>
             <MenuItem href='/admin/trazability' icon='mdi mdi-graph'>Trazabilidad</MenuItem>
             <MenuItem href='/admin/ventas' icon='mdi mdi-sale'>Ventas</MenuItem>
-            
+
             <li className="menu-title">Configuración</li>
             <MenuItem href='/admin/productos' icon='mdi mdi-store' >Productos</MenuItem>
             <MenuItem href='/admin/brands' icon='mdi mdi-storefront'>Marcas</MenuItem>
             <MenuItem href='/admin/categories' icon='mdi mdi-format-list-bulleted-type'>Categorías</MenuItem>
+
+            <MenuItemContainer title='Inventario' icon='mdi mdi-layers'>
+              <MenuItem href='/admin/warehouse' icon='mdi mdi-warehouse'>Almacen</MenuItem>
+            </MenuItemContainer>
+
             <MenuItem href='/admin/concepts' icon='mdi mdi-page-next'>Conceptos</MenuItem>
             <MenuItem href='/admin/usersyrols' icon='mdi mdi-contacts'>Usuarios y Roles</MenuItem>
           </ul>
