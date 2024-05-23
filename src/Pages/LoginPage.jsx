@@ -48,12 +48,12 @@ const LoginPage = () => {
                 <form ref={loginRef} id="login-form" onSubmit={onLoginSubmit}>
                   <div className="mb-3">
                     <label for="emailaddress" className="form-label">Usuario</label>
-                    <input className="form-control" type="text" id="username" required=""
+                    <input name='username' className="form-control" type="text" id="username" required=""
                       placeholder="Ingresa tu usuario" />
                   </div>
                   <div className="mb-3">
                     <label for="password" className="form-label">Contraseña</label>
-                    <input className="form-control" type="password" required="" id="password"
+                    <input name='password' className="form-control" type="password" required="" id="password"
                       placeholder="Ingresa tu contraseña" />
                   </div>
                   <div className="mb-3 d-grid text-center">

@@ -89,12 +89,12 @@ const ProductsPage = () => {
       color: colorRef.current.value,
       genero: genderRef.current.value,
       stock: warehouses.map(({ id, almacen }) => {
-        const stock = $(`[name="stock"][data-id="${id}"]`).val()
+        const cantidad = $(`[name="stock"][data-id="${id}"]`).val()
         const precioVenta = $(`[name="salePrice"][data-id="${id}"]`).val()
         return {
           id,
           almacen,
-          stock,
+          cantidad,
           precioVenta
         }
       })
