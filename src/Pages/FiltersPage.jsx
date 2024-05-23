@@ -46,6 +46,15 @@ const FiltersPage = () => {
                         <option value="">--Seleccionar--</option>
                     </select>
 
+            <label for="color">Color</label>
+                    <select id="color" name="color">
+                        <option value="">--Seleccionar--</option>
+                        <option value="rojo"> Rojo </option>
+                        <option value="azul"> Azul </option>
+                        <option value="negro"> Negro </option>
+                        <option value="rosado"> Rosado </option>
+                    </select>
+
            <label for="genero">Género</label>
                     <select id="genero" name="genero">
                         <option value="">--Seleccionar--</option>
