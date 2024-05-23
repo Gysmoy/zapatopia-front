@@ -8,7 +8,7 @@ import WarehousesRest from "../../Rest/WarehousesRest"
 moment.tz.setDefault("America/Lima")
 moment.locale("es")
 
-const WarehousePage = () => {
+const WarehousesPage = () => {
   const [warehouses, setWarehouses] = useState([])
   const [modalTittle, setModalTittle] = useState('Agregar marca')
   const [id, setId] = useState(null)
@@ -142,4 +142,4 @@ const WarehousePage = () => {
   )
 }
 
-export default WarehousePage
+export default WarehousesPage

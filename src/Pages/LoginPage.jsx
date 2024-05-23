@@ -32,32 +32,32 @@ const LoginPage = () => {
   }
 
   return (
-    <div class="account-pages my-5">
-      <div class="container">
+    <div className="account-pages my-5">
+      <div className="container">
 
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-lg-6 col-xl-4">
-            <div class="text-center">
+        <div className="row justify-content-center">
+          <div className="col-md-8 col-lg-6 col-xl-4">
+            <div className="text-center">
               <img className='mb-4' src={zapatopia} alt="Logo Zapatopia" height={125} />
             </div>
-            <div class="card">
-              <div class="card-body p-4">
-                <div class="text-center mb-4">
-                  <h4 class="text-uppercase mt-0">Login</h4>
+            <div className="card">
+              <div className="card-body p-4">
+                <div className="text-center mb-4">
+                  <h4 className="text-uppercase mt-0">Login</h4>
                 </div>
                 <form ref={loginRef} id="login-form" onSubmit={onLoginSubmit}>
-                  <div class="mb-3">
-                    <label for="emailaddress" class="form-label">Usuario</label>
-                    <input class="form-control" type="text" id="username" required=""
+                  <div className="mb-3">
+                    <label for="emailaddress" className="form-label">Usuario</label>
+                    <input className="form-control" type="text" id="username" required=""
                       placeholder="Ingresa tu usuario" />
                   </div>
-                  <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input class="form-control" type="password" required="" id="password"
+                  <div className="mb-3">
+                    <label for="password" className="form-label">Contraseña</label>
+                    <input className="form-control" type="password" required="" id="password"
                       placeholder="Ingresa tu contraseña" />
                   </div>
-                  <div class="mb-3 d-grid text-center">
-                    <button class="btn btn-primary" type="submit"> Ingresar </button>
+                  <div className="mb-3 d-grid text-center">
+                    <button className="btn btn-primary" type="submit"> Ingresar </button>
                   </div>
                 </form>
               </div>
