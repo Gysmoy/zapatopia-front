@@ -5,7 +5,7 @@ import CategoriesPage from "./Pages/Admin/CategoriesPage"
 import ProductsPage from "./Pages/Admin/ProductsPage"
 import UsersPage from "./Pages/Admin/UsersPage"
 import TrazabilityPage from "./Pages/Admin/TrazabilityPage"
-import WarehousePage from "./Pages/Admin/WarehousePage"
+import WarehousesPage from "./Pages/Admin/WarehousesPage"
 
 const Admin = () => {
     return (
@@ -15,7 +15,7 @@ const Admin = () => {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/brands" element={<BrandsPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
-        <Route path="/warehouse" element={<WarehousePage />} />
+        <Route path="/warehouse" element={<WarehousesPage />} />
         <Route path="/users" element={<UsersPage />} />
       </Routes>
     )
