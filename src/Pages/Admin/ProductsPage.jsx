@@ -28,7 +28,6 @@ const ProductsPage = () => {
   const sizeRef = useRef()
   const colorRef = useRef()
   const genderRef = useRef()
-  const generalStockRef = useRef()
 
   const $ = window.$
 
@@ -70,20 +69,35 @@ const ProductsPage = () => {
 
   const onModalSubmit = (e) => {
     e.preventDefault()
+    
+    const selectedCategory = categoryRef.current.getValue()[0]
+    const selectedBrand = brandref.current.getValue()[0]
+
     const request = {
       id: id || undefined,
       categoria: {
-        id: categoryRef.current.value
+        id: selectedCategory.value,
+        categoria: selectedCategory.label
       },
       marca: {
-        id: brandref.current.value
+        id: selectedBrand.value,
+        marca: selectedBrand.label
       },
       nombre: nameRef.current.value,
       precioCompra: purchasePriceRef.current.value,
       talla: sizeRef.current.value,
       color: colorRef.current.value,
       genero: genderRef.current.value,
-      stockGeneral: generalStockRef.current.value
+      stock: warehouses.map(({ id, almacen }) => {
+        const stock = $(`[name="stock"][data-id="${id}"]`).val()
+        const precioVenta = $(`[name="salePrice"][data-id="${id}"]`).val()
+        return {
+          id,
+          almacen,
+          stock,
+          precioVenta
+        }
+      })
     }
     ProductsRest.save(request).then(() => {
       resetForm()
@@ -110,7 +124,6 @@ const ProductsPage = () => {
     sizeRef.current.value = product.talla
     colorRef.current.value = product.color
     genderRef.current.value = product.genero
-    generalStockRef.current.value = product.stockGeneral
     $(modalRef.current).modal('show')
   }
 
@@ -196,31 +209,31 @@ const ProductsPage = () => {
         <div className="row">
           <div className="form-group col-12 mb-2">
             <label htmlFor="description">Nombre</label>
-            <input type="text" className="form-control" />
+            <input ref={nameRef} type="text" className="form-control" />
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="category">Categoria</label>
             <ReactSelect ref={categoryRef} options={categories.map(({ id, categoria }) => ({ value: id, label: categoria }))} />
           </div>
           <div className="form-group col-md-4 mb-2">
-            <label htmlFor="category">Categoria</label>
+            <label htmlFor="category">Marca</label>
             <ReactSelect ref={brandref} options={brands.map(({ id, marca }) => ({ value: id, label: marca }))} />
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Color</label>
-            <input type="color" name="" id="" className="form-control" />
+            <input ref={colorRef} type="color" name="" id="" className="form-control" />
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Precio compra</label>
-            <input type="number" name="" id="" className="form-control" />
+            <input ref={purchasePriceRef} type="number" name="" id="" className="form-control" />
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Talla</label>
-            <input type="number" name="" id="" className="form-control" />
+            <input ref={sizeRef} type="number" name="" id="" className="form-control" />
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Genero</label>
-            <select name="" id="" className="form-control">
+            <select ref={genderRef} name="" id="" className="form-control">
               <option value="X">Unisex</option>
               <option value="M">Masculino</option>
               <option value="F">Femenino</option>
@@ -241,13 +254,13 @@ const ProductsPage = () => {
               </thead>
               <tbody>
                 {warehouses.map(({ id, almacen }) => {
-                  return <tr>
+                  return <tr key={`warehouse-${id}`}>
                     <td>{almacen}</td>
                     <td className="p-0" style={{ width: '0%' }}>
-                      <input type="number" className="form-control" style={{ width: '75px' }} />
+                      <input name='stock' data-id={id} type="number" className="form-control" style={{ width: '75px' }} />
                     </td>
                     <td className="p-0" style={{ width: '0%' }}>
-                      <input type="number" className="form-control" style={{ width: '75px' }} />
+                      <input name='salePrice' data-id={id} type="number" className="form-control" style={{ width: '75px' }} />
                     </td>
                   </tr>
                 })}
