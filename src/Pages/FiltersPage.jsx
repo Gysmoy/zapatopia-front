@@ -40,10 +40,15 @@ const FiltersPage = () => {
             <label for="categoria">Categoría</label>
                     <select id="categoria" name="categoria">
                         <option value="">--Seleccionar--</option>
-                        <option value="">--Seleccionar--</option>
-                        <option value="">--Seleccionar--</option>
-                        <option value="">--Seleccionar--</option>
-                        <option value="">--Seleccionar--</option>
+                        <option value="running"> Running </option>
+                        <option value="trialrunning"> Trial Running </option>
+                        <option value="lifestyle"> Lifestyle </option>
+                        <option value="tenis"> Tenis </option>
+                        <option value="futbol"> Futbol </option>
+                        <option value="baloncesto"> Baloncesto </option>
+                        <option value="crossfit"> Crossfit </option>
+                        <option value="senderismo"> Senderismo </option>
+                        <option value="sandalias"> Sandalias </option>
                     </select>
 
             <label for="color">Color</label>
@@ -58,8 +63,9 @@ const FiltersPage = () => {
            <label for="genero">Género</label>
                     <select id="genero" name="genero">
                         <option value="">--Seleccionar--</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="femenino">Femenino</option>
+                        <option value="unisex"> Unisex </option>
+                        <option value="masculino"> Masculino </option>
+                        <option value="femenino"> Femenino </option>
                     </select>
 
           </form>
