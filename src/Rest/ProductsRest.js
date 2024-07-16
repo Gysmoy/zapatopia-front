@@ -6,6 +6,12 @@ class ProductsRest {
     const { result } = await Fetch(`${API_URL}/products/`)
     return result?.data ?? []
   }
+
+  static sales = async () => {
+    const { result } = await Fetch(`${API_URL}/products/sale`)
+    return result?.data ?? []
+  }
+
   static get = async (id) => {
     const { result } = await Fetch(`${API_URL}/products/${id}`)
     return result?.data ?? null

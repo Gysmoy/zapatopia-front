@@ -17,6 +17,8 @@ const ProductsPage = () => {
   const [brands, setBrands] = useState([])
   const [categories, setCategories] = useState([])
   const [warehouses, setWarehouses] = useState([])
+  const [categoryState, setCategoryState] = useState(null);
+  const [brandState, setBrandState] = useState(null);
   const [modalTittle, setModalTittle] = useState('Agregar producto')
   const [id, setId] = useState(null)
 
@@ -37,7 +39,7 @@ const ProductsPage = () => {
     loadBrands()
     loadCategories()
     loadWarehouses()
-  }, [null])
+  }, [])
 
   const loadProducts = () => {
     ProductsRest.all().then((data) => {
@@ -97,8 +99,9 @@ const ProductsPage = () => {
           cantidad,
           precioVenta
         }
-      })
+      }).filter(warehouse => warehouse.cantidad > 0)
     }
+    console.log(request);
     ProductsRest.save(request).then(() => {
       resetForm()
       $(modalRef.current).modal('hide')
@@ -117,13 +120,16 @@ const ProductsPage = () => {
     setModalTittle('Editar producto')
     resetForm()
     setId(product.id)
-    categoryRef.current.value = product.categoria
+    categoryRef.current.value = product.categoria;
     brandref.current.value = product.marca
     nameRef.current.value = product.nombre
     purchasePriceRef.current.value = product.precioCompra
     sizeRef.current.value = product.talla
     colorRef.current.value = product.color
     genderRef.current.value = product.genero
+
+    setCategoryState({ value: product.categoria.id, label: product.categoria.categoria })
+    setBrandState({ value: product.marca.id, label: product.marca.descripcion })
     $(modalRef.current).modal('show')
   }
 
@@ -144,6 +150,16 @@ const ProductsPage = () => {
       })
     }
   }
+
+  const handleCategoryChange = (selectedOption) => {
+    setCategoryState(selectedOption);
+    categoryState.current.value = categories.find(category => category.id === selectedOption.value);
+  };
+
+  const handleBrandChange = (selectedOption) => {
+    setBrandState(selectedOption);
+    brandref.current.value = brands.find(brand => brand.id === selectedOption.value);
+  };
 
 
   return (
@@ -181,8 +197,8 @@ const ProductsPage = () => {
                       const { id, categoria, marca, nombre, precioCompra, talla, color, genero, stockGeneral, fechaModificacion } = product
                       return <tr key={`product-${id}`}>
                         <td>{id}</td>
-                        <td>{categoria}</td>
-                        <td>{marca}</td>
+                        <td>{categoria.descripcion}</td>
+                        <td>{marca.descripcion}</td>
                         <td>{nombre}</td>
                         <td>{precioCompra}</td>
                         <td>{talla}</td>
@@ -213,15 +229,21 @@ const ProductsPage = () => {
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="category">Categoria</label>
-            <ReactSelect ref={categoryRef} options={categories.map(({ id, categoria }) => ({ value: id, label: categoria }))} />
+            <ReactSelect ref={categoryRef} value={categoryState} onChange={handleCategoryChange} options={categories.map(({ id, categoria }) => ({ value: id, label: categoria }))} />
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="category">Marca</label>
-            <ReactSelect ref={brandref} options={brands.map(({ id, marca }) => ({ value: id, label: marca }))} />
+            <ReactSelect ref={brandref} value={brandState} onChange={handleBrandChange} options={brands.map(({ id, marca }) => ({ value: id, label: marca }))} />
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Color</label>
-            <input ref={colorRef} type="color" name="" id="" className="form-control" />
+            <select ref={colorRef} name="" id="" className="form-control">
+              <option value="">--Seleccionar--</option>
+              <option value="R"> Rojo </option>
+              <option value="A"> Azul </option>
+              <option value="N"> Negro </option>
+              <option value="R"> Rosado </option>
+            </select>
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Precio compra</label>
@@ -229,12 +251,23 @@ const ProductsPage = () => {
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Talla</label>
-            <input ref={sizeRef} type="number" name="" id="" className="form-control" />
+            <select ref={sizeRef} name="" id="" className="form-control">
+              <option value="">--Seleccionar--</option>
+              <option value="38"> 38 </option>
+              <option value="39"> 39 </option>
+              <option value="40"> 40 </option>
+              <option value="41"> 41 </option>
+              <option value="42"> 42 </option>
+              <option value="43"> 43 </option>
+              <option value="44"> 44 </option>
+              <option value="45"> 45 </option>
+            </select>
           </div>
           <div className="form-group col-md-4 mb-2">
             <label htmlFor="">Genero</label>
             <select ref={genderRef} name="" id="" className="form-control">
-              <option value="X">Unisex</option>
+              <option value="">--Seleccionar--</option>
+              <option value="U">Unisex</option>
               <option value="M">Masculino</option>
               <option value="F">Femenino</option>
             </select>
