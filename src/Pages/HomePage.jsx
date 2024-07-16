@@ -14,7 +14,12 @@ const HomePage = () => {
         </div>
         <h2>Las mejores zapatillas a solo un clic de distancia</h2>
         <div className="search-container">
-          <a href="/FiltersPage.jsx"><button type="button">Empezar</button></a>
+          {/* <a href="/FiltersPage.jsx"><button type="button">Empezar</button></a> */}
+
+          <Link to="/filters">
+            <button>Empezar</button>
+          </Link>
+
         </div>
       </main>
     </>

@@ -62,7 +62,8 @@ const Menu = () => {
             <li className="menu-title">Dashboard</li>
             <MenuItem href='/admin/' icon='mdi mdi-view-dashboard'>Inicio</MenuItem>
             <MenuItem href='/admin/trazability' icon='mdi mdi-graph'>Trazabilidad</MenuItem>
-            <MenuItem href='/admin/ventas' icon='mdi mdi-sale'>Ventas</MenuItem>
+            <MenuItem href='/admin/sales' icon='mdi mdi-sale'>Ventas</MenuItem>
+            <MenuItem href='/admin/offers' icon='mdi mdi-sale'>Ofertas</MenuItem>
 
             <li className="menu-title">Configuración</li>
             <MenuItem href='/admin/products' icon='mdi mdi-store' >Productos</MenuItem>

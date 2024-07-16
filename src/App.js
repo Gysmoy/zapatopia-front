@@ -7,20 +7,24 @@ import Admin from './Admin';
 import FiltersPage from './Pages/FiltersPage';
 import LoginPage from './Pages/LoginPage';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
-        // Public routes
+        {/* Public routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/filters" element={<FiltersPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
         
-        // Admin routes
+        {/* Admin routes */}
         <Route path="/admin/*" element={<Admin />} />
 
-        // Page not found
+        {/* Page not found */}
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
