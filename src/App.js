@@ -19,7 +19,12 @@ function App() {
         <Route path="/filters" element={<FiltersPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
-        
+
+        //Subscription routes
+        <Route path="/subscribe" element={<SubscriptionForm />} />
+        <Route path="/notify" element={<NotificationButton />} />
+        <Route path="/subscriptions" element={<SubscriptionList />} />
+  
         // Admin routes
         <Route path="/admin/*" element={<Admin />} />
 
