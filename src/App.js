@@ -6,6 +6,9 @@ import PageNotFound from './Pages/PageNotFound';
 import Admin from './Admin';
 import FiltersPage from './Pages/FiltersPage';
 import LoginPage from './Pages/LoginPage';
+import SubscriptionForm from './Components/SubscriptionForm';
+import NotificationButton from './Components/NotificationButton';
+import SubscriptionList from './Components/SubscriptionList';
 
 function App() {
   return (
